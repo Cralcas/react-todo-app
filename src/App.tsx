@@ -1,11 +1,10 @@
-import "./App.css";
-import { TodoApp } from "./components/TodoApp";
+import {TodoApp} from "./components/TodoApp";
 
 function App() {
   return (
-    <>
+    <div className="min-h-screen">
       <TodoApp />
-    </>
+    </div>
   );
 }
 

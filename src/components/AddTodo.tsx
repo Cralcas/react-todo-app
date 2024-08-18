@@ -15,23 +15,27 @@ export const AddTodo = () => {
 
     dispatch({
       type: ActionType.ADDED,
-      payload: todoText,
+      payload: todoText.trim(),
     });
 
     setTodoText("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="flex gap-2 text-lg">
       <input
+        className="rounded-md border px-2"
         type="text"
         value={todoText}
         onChange={(e) => setTodoText(e.target.value)}
         placeholder="What todo..."
         minLength={3}
+        maxLength={15}
         required
       />
-      <button>Add</button>
+      <button className="px-4 py-1.5 bg-green-800 rounded-md text-white font-bold">
+        Add
+      </button>
     </form>
   );
 };
