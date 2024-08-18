@@ -29,15 +29,15 @@ export const TodoItem = ({todo}: TodoItemProps) => {
 
   return (
     <>
-      <div className="flex justify-between text-lg">
+      <div className="flex justify-between gap-1 text-lg break-all">
         <span
           className={`${
             todo.done ? "text-gray-500 line-through" : "text-black"
-          }`}
+          } border-b  w-full`}
         >
           {todo.text}
         </span>
-        <div className="flex gap-2.5">
+        <div className="flex items-start gap-2.5">
           <button
             className={`${
               todo.done ? "bg-gray-500" : "bg-green-500"

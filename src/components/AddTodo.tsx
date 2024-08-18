@@ -30,7 +30,6 @@ export const AddTodo = () => {
         onChange={(e) => setTodoText(e.target.value)}
         placeholder="What todo..."
         minLength={3}
-        maxLength={15}
         required
       />
       <button className="px-4 py-1.5 bg-green-800 rounded-md text-white font-bold">
