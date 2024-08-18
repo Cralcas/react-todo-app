@@ -1,6 +1,6 @@
-import { FormEvent, useContext, useState } from "react";
-import { TodosDispatchContext } from "../contexts/TodoContext";
-import { ActionType } from "../reducers/TodoReducer";
+import {FormEvent, useContext, useState} from "react";
+import {TodosDispatchContext} from "../contexts/TodoContext";
+import {ActionType} from "../reducers/TodoReducer";
 
 export const AddTodo = () => {
   const [todoText, setTodoText] = useState("");
@@ -28,6 +28,8 @@ export const AddTodo = () => {
         value={todoText}
         onChange={(e) => setTodoText(e.target.value)}
         placeholder="What todo..."
+        minLength={3}
+        required
       />
       <button>Add</button>
     </form>

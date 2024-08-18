@@ -1,13 +1,13 @@
-import { useContext } from "react";
-import { Todo } from "../models/Todo";
-import { TodosDispatchContext } from "../contexts/TodoContext";
-import { ActionType } from "../reducers/TodoReducer";
+import {useContext} from "react";
+import {Todo} from "../models/Todo";
+import {TodosDispatchContext} from "../contexts/TodoContext";
+import {ActionType} from "../reducers/TodoReducer";
 
 interface TodoItemProps {
   todo: Todo;
 }
 
-export const TodoItem = ({ todo }: TodoItemProps) => {
+export const TodoItem = ({todo}: TodoItemProps) => {
   const dispatch = useContext(TodosDispatchContext);
 
   if (!dispatch) {
@@ -20,11 +20,20 @@ export const TodoItem = ({ todo }: TodoItemProps) => {
     });
   };
 
+  const toggleTodo = (id: number) => {
+    dispatch({
+      type: ActionType.TOGGLED,
+      payload: id.toString(),
+    });
+  };
+
   return (
     <>
       <div>
         <span>{todo.text}</span>
-        <button>Toggle</button>
+        <button onClick={() => toggleTodo(todo.id)}>
+          {todo.done ? "Not done" : "Done"}
+        </button>
         <button onClick={() => removeTodo(todo.id)}>X</button>
       </div>
     </>
