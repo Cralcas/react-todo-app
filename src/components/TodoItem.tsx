@@ -26,7 +26,7 @@ export const TodoItem = ({todo}: TodoItemProps) => {
 
   return (
     <>
-      <div className="flex justify-between gap-1 text-lg break-all">
+      <div className="flex justify-between gap-1.5 text-lg break-all">
         <span
           className={`${
             todo.done ? "text-gray-500 line-through" : "text-black"
@@ -37,14 +37,14 @@ export const TodoItem = ({todo}: TodoItemProps) => {
         <div className="flex items-start gap-2.5">
           <button
             className={`${
-              todo.done ? "bg-gray-500" : "bg-green-500"
+              todo.done ? "bg-gray-500" : "bg-green-700"
             } px-1 rounded-sm text-white font-sm`}
             onClick={() => toggleTodo(todo.id)}
           >
             {todo.done ? "⟳" : "✓"}
           </button>
           <button
-            className="bg-red-500 px-1 rounded-sm text-white"
+            className="bg-red-700 px-1 rounded-sm text-white"
             onClick={() => removeTodo(todo.id)}
           >
             X

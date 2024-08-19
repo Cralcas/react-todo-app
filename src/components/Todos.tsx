@@ -7,7 +7,11 @@ export const Todos = () => {
   return (
     <>
       {todos.length > 0 && (
-        <div className="flex flex-col gap-6 w-[300px] md:w-[500px] p-2 rounded-md border border-opacity-95">
+        <div
+          className={`flex flex-col gap-6 w-[300px] md:w-[500px] p-3 rounded-md border border-opacity-95 max-h-[350px] ${
+            todos.length > 6 ? "overflow-y-scroll" : ""
+          } scrollbar-hidden`}
+        >
           {todos.map((todo) => {
             return <TodoItem key={todo.id} todo={todo} />;
           })}
