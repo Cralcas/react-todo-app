@@ -1,6 +1,6 @@
 import {useContext} from "react";
 import {TodoItem} from "./TodoItem";
-import {TodosContext} from "../contexts/TodoContext";
+import {TodosContext} from "../contexts/TodosContext";
 
 export const Todos = () => {
   const todos = useContext(TodosContext);

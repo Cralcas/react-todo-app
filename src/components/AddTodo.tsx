@@ -1,14 +1,10 @@
 import {FormEvent, useContext, useState} from "react";
-import {TodosDispatchContext} from "../contexts/TodoContext";
+import {TodosDispatchContext} from "../contexts/TodoDispatchContext";
 import {ActionType} from "../reducers/TodoReducer";
 
 export const AddTodo = () => {
   const [todoText, setTodoText] = useState("");
   const dispatch = useContext(TodosDispatchContext);
-
-  if (!dispatch) {
-    throw new Error("dispatch is not defined");
-  }
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
