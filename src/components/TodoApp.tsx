@@ -13,15 +13,15 @@ export const TodoApp = () => {
   return (
     <>
       <TodosDispatchContext.Provider value={dispatch}>
-        <TodosContext.Provider value={todos}>
-          <div className="mx-auto">
-            <h1 className="text-center text-xl font-bold p-5">TODO</h1>
-            <div className="flex flex-col items-center gap-8">
-              <AddTodo />
+        <div className="mx-auto">
+          <h1 className="text-center text-xl font-bold p-5">TODO</h1>
+          <div className="flex flex-col items-center gap-8">
+            <AddTodo />
+            <TodosContext.Provider value={todos}>
               <Todos />
-            </div>
+            </TodosContext.Provider>
           </div>
-        </TodosContext.Provider>
+        </div>
       </TodosDispatchContext.Provider>
     </>
   );
