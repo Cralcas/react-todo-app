@@ -26,7 +26,7 @@ export const TodoItem = ({todo}: TodoItemProps) => {
 
   return (
     <>
-      <li className="flex gap-1.5 text-lg break-all mb-3">
+      <li className="flex mb-3 text-lg break-all">
         <p
           className={`w-full p-1 font-Bebas border-b ${
             todo.done ? "text-gray-500 line-through" : "text-black"
@@ -34,7 +34,7 @@ export const TodoItem = ({todo}: TodoItemProps) => {
         >
           {todo.text}
         </p>
-        <div className="flex gap-x-2.5 items-center">
+        <div className="flex gap-2.5 items-center">
           <button
             className={`${
               todo.done ? "bg-gray-500" : "bg-green-700"
