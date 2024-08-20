@@ -14,7 +14,9 @@ export const TodoApp = () => {
     <>
       <TodosDispatchContext.Provider value={dispatch}>
         <div className="mx-auto">
-          <h1 className="text-center text-xl font-bold p-5">TODO</h1>
+          <h1 className="font-Bebas text-center text-neutral-900 text-[48px] p-5">
+            TODO
+          </h1>
           <div className="flex flex-col items-center gap-8 mt-10">
             <AddTodo />
             <TodosContext.Provider value={todos}>

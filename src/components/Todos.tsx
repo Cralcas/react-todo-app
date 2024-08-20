@@ -8,7 +8,7 @@ export const Todos = () => {
     <>
       {todos.length > 0 && (
         <div
-          className={`flex flex-col gap-6 w-[300px] md:w-[500px] p-3 rounded-md border border-opacity-95 max-h-[350px] ${
+          className={`flex flex-col gap-6 w-[300px] md:w-[500px] max-h-[350px] p-3 bg-slate-100 rounded-md border border-opacity-95 ${
             todos.length > 6 ? "overflow-y-scroll" : ""
           } scrollbar-hidden`}
         >
