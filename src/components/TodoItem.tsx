@@ -34,17 +34,19 @@ export const TodoItem = ({todo}: TodoItemProps) => {
         >
           {todo.text}
         </p>
-        <div className="flex-shrink-0 items-center">
+        <div className="flex justify-center p-2">
           <button
             className={`${
-              todo.done ? "bg-gray-500" : "bg-green-700 mr-1"
-            } px-1 rounded-sm text-white font-sm font-bold`}
+              todo.done
+                ? "bg-gray-500"
+                : "bg-green-700 hover:bg-green-800 border-b-2 border-green-950 mr-1"
+            } px-1 rounded-sm text-white font-sm font-bold mr-1`}
             onClick={() => toggleTodo(todo.id)}
           >
             {todo.done ? "⟳" : "✓"}
           </button>
           <button
-            className="bg-red-700 px-1 rounded-sm text-white font-sm font-bold"
+            className="bg-red-700 hover:bg-red-800 px-1 rounded-sm text-white font-sm font-bold border-b-2 border-red-950"
             onClick={() => removeTodo(todo.id)}
           >
             X

@@ -29,7 +29,7 @@ export const AddTodo = () => {
         maxLength={35}
         required
       />
-      <button className="px-4 py-1.5 bg-green-800 rounded-md text-white font-bold  hover:bg-green-700   shadow-lg shadow-neutral-500/20 transition active:scale-95">
+      <button className="px-4 py-1.5 bg-green-700 text-white font-bold  hover:bg-green-800 transition active:scale-95 rounded-md shadow-todoShadow shadow-green-900">
         Add
       </button>
     </form>

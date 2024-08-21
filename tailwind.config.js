@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         Bebas: ["Bebas Neue", "sans-serif"],
       },
+      boxShadow: {
+        todoShadow: "3px 3px",
+      },
     },
   },
   plugins: [],
