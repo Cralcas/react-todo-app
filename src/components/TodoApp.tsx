@@ -1,14 +1,27 @@
 import {useReducer} from "react";
 import {AddTodo} from "./AddTodo";
-import {TodoReducer} from "../reducers/TodoReducer";
+import {ActionType, TodoReducer} from "../reducers/TodoReducer";
 import {Todos} from "./Todos";
 import {Todo} from "../models/Todo";
 import {TodosContext} from "../contexts/TodosContext";
 import {TodosDispatchContext} from "../contexts/TodoDispatchContext";
+import {useLocalStorage} from "../hooks/useLocalStorage";
 
 export const TodoApp = () => {
-  const todoExample: Todo[] = [{id: 1, text: "Example", done: false}];
-  const [todos, dispatch] = useReducer(TodoReducer, todoExample);
+  const [todos, setTodos] = useLocalStorage<Todo[]>("todoList", []);
+
+  const todoStateManager = (
+    state: Todo[],
+    action: {type: ActionType; payload: string}
+  ) => {
+    const updatedTodos = TodoReducer(state, action);
+
+    setTodos(updatedTodos);
+
+    return updatedTodos;
+  };
+
+  const [todosListState, dispatch] = useReducer(todoStateManager, todos);
 
   return (
     <>
@@ -19,7 +32,7 @@ export const TodoApp = () => {
           </h1>
           <div className="flex flex-col items-center gap-8 mt-10">
             <AddTodo />
-            <TodosContext.Provider value={todos}>
+            <TodosContext.Provider value={todosListState}>
               <Todos />
             </TodosContext.Provider>
           </div>
