@@ -1,6 +1,6 @@
-import {FormEvent, useContext, useState} from "react";
-import {TodosDispatchContext} from "../contexts/TodoDispatchContext";
-import {ActionType} from "../reducers/TodoReducer";
+import { FormEvent, useContext, useState } from "react";
+import { TodosDispatchContext } from "../contexts/TodoDispatchContext";
+import { ActionType } from "../reducers/TodoReducer";
 
 export const AddTodo = () => {
   const [todoText, setTodoText] = useState("");
