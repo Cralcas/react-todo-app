@@ -1,18 +1,18 @@
-import {useReducer} from "react";
-import {AddTodo} from "./AddTodo";
-import {ActionType, TodoReducer} from "../reducers/TodoReducer";
-import {Todos} from "./Todos";
-import {Todo} from "../models/Todo";
-import {TodosContext} from "../contexts/TodosContext";
-import {TodosDispatchContext} from "../contexts/TodoDispatchContext";
-import {useLocalStorage} from "../hooks/useLocalStorage";
+import { useReducer } from "react";
+import { AddTodo } from "./AddTodo";
+import { ActionType, TodoReducer } from "../reducers/TodoReducer";
+import { Todos } from "./Todos";
+import { Todo } from "../models/Todo";
+import { TodosContext } from "../contexts/TodosContext";
+import { TodosDispatchContext } from "../contexts/TodoDispatchContext";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export const TodoApp = () => {
   const [todos, setTodos] = useLocalStorage<Todo[]>("todoList", []);
 
   const todoStateManager = (
     state: Todo[],
-    action: {type: ActionType; payload: string}
+    action: { type: ActionType; payload: string }
   ) => {
     const updatedTodos = TodoReducer(state, action);
 

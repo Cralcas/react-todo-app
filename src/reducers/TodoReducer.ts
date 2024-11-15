@@ -1,4 +1,4 @@
-import {Todo} from "../models/Todo";
+import { Todo } from "../models/Todo";
 
 export interface IAction {
   type: ActionType;
@@ -9,6 +9,7 @@ export enum ActionType {
   ADDED,
   REMOVED,
   TOGGLED,
+  CLEARED,
 }
 
 export const TodoReducer = (todos: Todo[], action: IAction): Todo[] => {
@@ -21,8 +22,11 @@ export const TodoReducer = (todos: Todo[], action: IAction): Todo[] => {
 
     case ActionType.TOGGLED:
       return todos.map((todo) =>
-        todo.id === +action.payload ? {...todo, done: !todo.done} : todo
+        todo.id === +action.payload ? { ...todo, done: !todo.done } : todo
       );
+
+    case ActionType.CLEARED:
+      return [];
 
     default:
       return todos;
